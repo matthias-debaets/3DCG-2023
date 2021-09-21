@@ -34,6 +34,7 @@ gh issue create --title "Pattern Transformations" --label enhancement --body htt
 gh issue create --title "Parallel Task Scheduler" --label enhancement --body http://3dcg.leone.ucll.be/extensions/performance/parallel-task-scheduler/explanations.html --project raytracer
 gh issue create --title "Motion Blur" --label enhancement --body http://3dcg.leone.ucll.be/extensions/pipeline/motion-blur/explanations.html --project raytracer
 gh issue create --title "Studio Pipeline Segment" --label enhancement --body http://3dcg.leone.ucll.be/extensions/pipeline/studio/explanations.html --project raytracer
+gh issue create --title "Binary Mesh" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/binary-mesh/explanations.html --project raytracer
 gh issue create --title "Bounding Box Accelerator" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/bounding-box-accelerator/explanations.html --project raytracer
 gh issue create --title "Box" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/box/explanations.html --project raytracer
 gh issue create --title "Bumpifier" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/bumpifier/explanations.html --project raytracer
@@ -46,6 +47,8 @@ gh issue create --title "Disk" --label enhancement --body http://3dcg.leone.ucll
 gh issue create --title "Mesh" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/mesh/explanations.html --project raytracer
 gh issue create --title "Planes" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/plane/explanations.html --project raytracer
 gh issue create --title "Resizer" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/resizer/explanations.html --project raytracer
+gh issue create --title "Smooth Mesh" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/smooth-mesh/explanations.html --project raytracer
+gh issue create --title "Binary Mesh" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/textured-mesh/explanations.html --project raytracer
 gh issue create --title "Transformations" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/transformations/explanations.html --project raytracer
 gh issue create --title "Triangle" --label enhancement --body http://3dcg.leone.ucll.be/extensions/primitives/triangle/explanations.html --project raytracer
 gh issue create --title "Ray Tracer v1" --label enhancement --body http://3dcg.leone.ucll.be/extensions/ray-tracers/v1/explanations.html --project raytracer
