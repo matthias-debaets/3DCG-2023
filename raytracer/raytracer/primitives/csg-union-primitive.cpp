@@ -1,6 +1,8 @@
 #include "primitives/csg-union-primitive.h"
 #include "easylogging++.h"
 #include <algorithm>
+#include <cstddef>
+
 
 using namespace raytracer;
 using namespace raytracer::primitives;
@@ -124,7 +126,7 @@ namespace
         Primitive m_child2;
     };
 
-    Primitive build_union_tree(std::vector<Primitive>& children, int from, int to)
+    Primitive build_union_tree(std::vector<Primitive>& children, size_t from, size_t to)
     {
         assert(from < to);
 
@@ -134,7 +136,7 @@ namespace
         }
         else
         {
-            int middle = (from + to) / 2;
+            auto middle = (from + to) / 2;
 
             auto left = build_union_tree(children, from, middle);
             auto right = build_union_tree(children, middle, to);
