@@ -15,6 +15,7 @@ namespace
     struct RaytracerLibrary
     {
         RayTracer v0() const { return raytracer::raytracers::v0(); }
+        RayTracer v1() const { return raytracer::raytracers::v1(); }
     };
 
     std::shared_ptr<Scene> create_scene(Camera camera, Primitive root, const std::vector<Boxed_Value>& boxed_lights)
@@ -42,7 +43,8 @@ ModulePtr raytracer::scripting::_private_::create_raytracing_module()
 #   define BIND_AS(INTERNAL, EXTERNAL)  module->add(fun(&RaytracerLibrary::INTERNAL), #EXTERNAL)
 #   define BIND(NAME)                   BIND_AS(NAME, NAME)
     BIND(v0);
-    BIND_AS(v0, latest);
+    BIND(v1);
+    BIND_AS(v1, latest);
 #   undef BIND
 
     // Expose create_scene under the same name
