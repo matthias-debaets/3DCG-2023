@@ -33,6 +33,7 @@ namespace
         {
             return animation::animate(from, to, duration);
         }
+
     };
 
     Duration seconds(double s)

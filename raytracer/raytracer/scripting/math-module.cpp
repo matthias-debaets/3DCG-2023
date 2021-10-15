@@ -52,6 +52,11 @@ namespace
         return interval(lower, upper);
     }
 
+    struct EasingLibrary
+    {
+	    
+    };
+
     struct PointFactories
     {
         Point2D cartesian2d(double x, double y) const                           { return Point2D::cartesian(x, y); }
@@ -173,6 +178,16 @@ namespace
     {
         module.add(fun(&create_rectangle3d), "rect3d");
     }
+
+	void add_easing(Module& module)
+    {
+    	auto easing_library = std::make_shared<EasingLibrary>();
+        module.add_global_const(chaiscript::const_var(easing_library), "Easing");
+
+#       define BIND(NAME)  module.add(fun(&EasingLibrary::NAME), #NAME)
+
+
+    }
 }
 
 ModulePtr raytracer::scripting::_private_::create_math_module()
@@ -183,7 +198,8 @@ ModulePtr raytracer::scripting::_private_::create_math_module()
     add_rectangle3d(*module);
     add_angle(*module);
     add_interval(*module);
-
+    add_easing(*module);
+	
     return module;
 }
 
