@@ -33,6 +33,11 @@ namespace
         {
             return animation::animate(from, to, duration);
         }
+    	
+    	template<typename T> Animation<T> ease_animation(Animation<T> animation, math::functions::EasingFunction easing_function)
+        {
+            return ease(animation, easing_function);
+        }
 
     };
 
@@ -61,6 +66,9 @@ ModulePtr raytracer::scripting::_private_::create_animation_module()
 #define BIND(NAME)                                  BIND_AS(NAME, NAME)
     BIND_AS(double_animation, animate);
     BIND_AS(point_animation, animate);
+    BIND_AS(ease_animation<double>, ease);
+    BIND_AS(ease_animation<Angle>, ease);
+    BIND_AS(ease_animation<Point3D>, ease);
 #undef BIND
 #undef BIND_AS
 

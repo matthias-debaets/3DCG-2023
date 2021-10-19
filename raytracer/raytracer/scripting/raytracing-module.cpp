@@ -16,6 +16,7 @@ namespace
     {
         RayTracer v0() const { return raytracer::raytracers::v0(); }
         RayTracer v1() const { return raytracer::raytracers::v1(); }
+        RayTracer v2() const { return raytracer::raytracers::v2(); }
     };
 
     std::shared_ptr<Scene> create_scene(Camera camera, Primitive root, const std::vector<Boxed_Value>& boxed_lights)
@@ -44,7 +45,8 @@ ModulePtr raytracer::scripting::_private_::create_raytracing_module()
 #   define BIND(NAME)                   BIND_AS(NAME, NAME)
     BIND(v0);
     BIND(v1);
-    BIND_AS(v1, latest);
+    BIND(v2);
+    BIND_AS(v2, latest);
 #   undef BIND
 
     // Expose create_scene under the same name
