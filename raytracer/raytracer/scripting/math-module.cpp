@@ -54,7 +54,6 @@ namespace
 
     struct EasingLibrary
     {
-	    
     };
 
     struct PointFactories
