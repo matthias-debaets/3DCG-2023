@@ -34,11 +34,10 @@ namespace
             return animation::animate(from, to, duration);
         }
     	
-    	template<typename T> Animation<T> ease_animation(Animation<T> animation, math::functions::EasingFunction easing_function)
+        template<typename T> Animation<T> ease_animation(Animation<T> animation, math::functions::EasingFunction easing_function) const
         {
             return ease(animation, easing_function);
         }
-
     };
 
     Duration seconds(double s)

@@ -360,6 +360,7 @@
     <ClCompile Include="cameras\perspective-camera.cpp" />
     <ClCompile Include="materials\composition-material.cpp" />
     <ClCompile Include="materials\material-properties.cpp" />
+    <ClCompile Include="math\functions\easing\bounce-easing-function.cpp" />
     <ClCompile Include="math\functions\easing\elastic-easing-function.cpp" />
     <ClCompile Include="math\functions\easing\linear-easing-function.cpp" />
     <ClCompile Include="math\functions\easing\stretch-easing-function.cpp" />
@@ -494,6 +495,7 @@
     <ClInclude Include="math\coordinate-systems.h" />
     <ClInclude Include="math\functions\constant.h" />
     <ClInclude Include="math\functions\easing-function.h" />
+    <ClInclude Include="math\functions\easing\bounce-easing-function.h" />
     <ClInclude Include="math\functions\easing\elastic-easing-function.h" />
     <ClInclude Include="math\functions\easing\linear-easing-function.h" />
     <ClInclude Include="math\functions\easing\stretch-easing-function.h" />

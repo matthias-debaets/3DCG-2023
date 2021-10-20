@@ -1,3 +1,5 @@
+#include "math/functions/easing/bounce-easing-function.h"
+#include "math/functions/easing/elastic-easing-function.h"
 #ifndef EXCLUDE_SCRIPTING
 
 #include "scripting/math-module.h"
@@ -54,9 +56,11 @@ namespace
 
     struct EasingLibrary
     {
-    };
+        EasingFunction bounce(const int x, const int y) const { return math::functions::easing::bounce(x, y); }
+        EasingFunction elastic(const int x, const  int y) const { return math::functions::easing::elastic(x, y); }
+	};
 
-    struct PointFactories
+	struct PointFactories
     {
         Point2D cartesian2d(double x, double y) const                           { return Point2D::cartesian(x, y); }
         Point2D polar(double radius, Angle theta) const                         { return Point2D::polar(radius, theta); }
@@ -184,7 +188,8 @@ namespace
         module.add_global_const(chaiscript::const_var(easing_library), "Easing");
 
 #       define BIND(NAME)  module.add(fun(&EasingLibrary::NAME), #NAME)
-
+		BIND(bounce);
+		BIND(elastic);
 
     }
 }
