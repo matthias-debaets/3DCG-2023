@@ -371,6 +371,7 @@
     <ClCompile Include="pipeline\animation-processor.cpp" />
     <ClCompile Include="pipeline\base64-processor.cpp" />
     <ClCompile Include="pipeline\renderer-processor.cpp" />
+    <ClCompile Include="pipeline\studio.cpp" />
     <ClCompile Include="pipeline\text-writer-consumer.cpp" />
     <ClCompile Include="pipeline\wif-consumer.cpp" />
     <ClCompile Include="pipeline\wif-processor.cpp" />
@@ -516,6 +517,7 @@
     <ClInclude Include="pipeline\processor.h" />
     <ClInclude Include="pipeline\producer.h" />
     <ClInclude Include="pipeline\renderer-processor.h" />
+    <ClInclude Include="pipeline\studio.h" />
     <ClInclude Include="pipeline\text-writer-consumer.h" />
     <ClInclude Include="pipeline\wif-consumer.h" />
     <ClInclude Include="pipeline\wif-processor.h" />

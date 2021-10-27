@@ -183,6 +183,11 @@ namespace
         {
             return wrap(pipeline::text_writer(std::cout));
         }
+
+        std::shared_ptr<Wrapper> studio() const
+        {
+            return wrap(pipeline::studio());
+        }
     };
 
     void pipeline_builder(Boxed_Value initial, const std::vector<Boxed_Value>& pipeline_segments)
@@ -229,6 +234,7 @@ ModulePtr raytracer::scripting::_private_::create_pipeline_module()
     BIND_AS(wif_to_file, wif);
     BIND(null_bitmap_consumer);
     BIND(base64);
+    BIND(studio);
     BIND(stdout);
 #   undef BIND_AS
 #   undef BIND
