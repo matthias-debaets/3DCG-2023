@@ -258,7 +258,11 @@
     <ClCompile Include="raytracers\ray-tracer-v2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="pipeline\studio.cpp">
+=======
+    <ClCompile Include="raytracers\ray-tracer-v3.cpp">
+>>>>>>> 215e36e6ec6227e4e3c2364189951078f422b963
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -800,7 +804,11 @@
     <ClInclude Include="raytracers\ray-tracer-v2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="pipeline\studio.h">
+=======
+    <ClInclude Include="raytracers\ray-tracer-v3.h">
+>>>>>>> 215e36e6ec6227e4e3c2364189951078f422b963
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
