@@ -42,6 +42,11 @@ namespace
         {
             return samplers::nrooks(n);
         }
+
+        Sampler multijittered(unsigned n) const
+        {
+            return samplers::multijittered(n);
+        }
     };
 }
 
@@ -61,6 +66,7 @@ ModulePtr raytracer::scripting::_private_::create_samplers_module()
     BIND(jittered);
     BIND(halfjittered);
     BIND(nrooks);
+    BIND(multijittered);
 #   undef BIND
 
     return module;

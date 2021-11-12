@@ -92,6 +92,7 @@
     <ClCompile Include="samplers\stratified-jittered-sampler.cpp" />
     <ClCompile Include="samplers\stratified-half-jittered-sampler.cpp" />
     <ClCompile Include="samplers\n-rooks-sampler.cpp" />
+    <ClCompile Include="samplers\multi-jittered-sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation\animation.h" />
@@ -280,5 +281,6 @@
     <ClInclude Include="samplers\stratified-jittered-sampler.h" />
     <ClInclude Include="samplers\stratified-half-jittered-sampler.h" />
     <ClInclude Include="samplers\n-rooks-sampler.h" />
+    <ClInclude Include="samplers\multi-jittered-sampler.h" />
   </ItemGroup>
 </Project>
