@@ -411,6 +411,7 @@
     <ClCompile Include="samplers\random-sampler.cpp" />
     <ClCompile Include="samplers\sampler.cpp" />
     <ClCompile Include="samplers\single-sampler.cpp" />
+    <ClCompile Include="samplers\stratified-half-jittered-sampler.cpp" />
     <ClCompile Include="samplers\stratified-jittered-sampler.cpp" />
     <ClCompile Include="samplers\stratified-sampler.cpp" />
     <ClCompile Include="scripting\animation-module.cpp" />
@@ -589,6 +590,7 @@
     <ClInclude Include="samplers\samplers.h" />
     <ClInclude Include="samplers\single-sampler.h" />
     <ClInclude Include="data-structures\array.h" />
+    <ClInclude Include="samplers\stratified-half-jittered-sampler.h" />
     <ClInclude Include="samplers\stratified-jittered-sampler.h" />
     <ClInclude Include="samplers\stratified-sampler.h" />
     <ClInclude Include="scripting\animation-module.h" />
