@@ -37,6 +37,11 @@ namespace
         {
             return samplers::stratified_half_jittered(rows, columns);
         }
+
+    	Sampler nrooks(unsigned n) const
+        {
+            return samplers::nrooks(n);
+        }
     };
 }
 
@@ -55,6 +60,7 @@ ModulePtr raytracer::scripting::_private_::create_samplers_module()
     BIND(stratified);
     BIND(jittered);
     BIND(halfjittered);
+    BIND(nrooks);
 #   undef BIND
 
     return module;
