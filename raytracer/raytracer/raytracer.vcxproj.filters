@@ -87,6 +87,8 @@
     <ClCompile Include="util\beep.cpp" />
     <ClCompile Include="util\misc.cpp" />
     <ClCompile Include="samplers\random-sampler.cpp" />
+    <ClCompile Include="samplers\stratified-sampler.cpp" />
+    <ClCompile Include="tests\stratified-sampler-tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation\animation.h" />
@@ -271,5 +273,6 @@
     <ClInclude Include="math\rectangle2d.h" />
     <ClInclude Include="version.h" />
     <ClInclude Include="samplers\random-sampler.h" />
+    <ClInclude Include="samplers\stratified-sampler.h" />
   </ItemGroup>
 </Project>

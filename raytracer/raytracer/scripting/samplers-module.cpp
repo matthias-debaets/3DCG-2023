@@ -22,6 +22,11 @@ namespace
         {
             return samplers::random(n);
         }
+
+        Sampler stratified(unsigned rows, unsigned columns) const
+        {
+            return samplers::stratified_fixed(rows, columns);
+        }
     };
 }
 
@@ -37,6 +42,7 @@ ModulePtr raytracer::scripting::_private_::create_samplers_module()
 #   define BIND(NAME)  module->add(fun(&SamplerLibrary::NAME), #NAME)
     BIND(single);
     BIND(random);
+    BIND(stratified);
 #   undef BIND
 
     return module;
