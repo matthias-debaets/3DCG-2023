@@ -48,7 +48,7 @@ imaging::Color raytracers::_private_::RayTracerV2::process_lights(const Scene& s
     return result;
 }
 
-imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_source(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightSource light_source) const
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_source(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightSource& light_source) const
 {
     imaging::Color result = colors::black();
     for (auto &light_ray : light_source->lightrays_to(hit.position))
@@ -58,29 +58,27 @@ imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_sour
     return result;
 }
 
-imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightRay light_ray) const
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay light_ray) const
 {
     imaging::Color result = colors::black();
     result += compute_diffuse(scene, properties, hit, ray, light_ray);
     return result;
 }
 
-imaging::Color raytracer::raytracers::_private_::RayTracerV2::compute_diffuse(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightRay light_ray) const
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::compute_diffuse(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay light_ray) const
 {
-    Vector3D n_vector = hit.normal;
-    Point3D L = light_ray.ray.origin;
-    Point3D P = hit.position;
-    Color CL = light_ray.color;
-    Color CP = properties.ambient;
+    const Vector3D n_vector = hit.normal;
+    const Point3D L = light_ray.ray.origin;
+    const Point3D P = hit.position;
+    const Color CL = light_ray.color;
+    const Color CP = properties.diffuse;
 
-    double cosa = (L - P).normalized().dot(n_vector);
+    const double cosa = (L - P).normalized().dot(n_vector);
 	if (cosa > 0)
 	{
         return cosa * CL * CP;
-	} else
-	{
-        return colors::black();
-	}
+	} 
+    return colors::black();
 }
 
 
