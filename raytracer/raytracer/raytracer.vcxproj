@@ -348,6 +348,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="easylogging++.cc" />
+    <ClCompile Include="lights\directional-light.cpp" />
     <ClCompile Include="math\angle.cpp" />
     <ClCompile Include="animation\animation.cpp" />
     <ClCompile Include="animation\duration.cpp" />
@@ -494,6 +495,7 @@
     <ClInclude Include="chaiscript\utility\static_string.hpp" />
     <ClInclude Include="chaiscript\utility\utility.hpp" />
     <ClInclude Include="command-line-parser.h" />
+    <ClInclude Include="lights\directional-light.h" />
     <ClInclude Include="materials\composition-material.h" />
     <ClInclude Include="imaging\bitmap-function.h" />
     <ClInclude Include="cameras\camera.h" />

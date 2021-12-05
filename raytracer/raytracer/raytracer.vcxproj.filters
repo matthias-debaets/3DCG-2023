@@ -62,6 +62,7 @@
     <ClCompile Include="raytracers\ray-tracer-v1.cpp" />
     <ClCompile Include="raytracers\ray-tracer-v2.cpp" />
     <ClCompile Include="raytracers\ray-tracer-v3.cpp" />
+	<ClCompile Include="raytracers\ray-tracer-v4.cpp" />
     <ClCompile Include="renderers\renderer-base.cpp" />
     <ClCompile Include="renderers\standard-renderer.cpp" />
     <ClCompile Include="lights\light-ray.cpp" />
@@ -354,6 +355,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="raytracers\ray-tracer-v4.cpp">
+	  <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lights\directional-light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -899,6 +903,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="raytracers\ray-tracer-v4.h">
+	      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\directional-light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
