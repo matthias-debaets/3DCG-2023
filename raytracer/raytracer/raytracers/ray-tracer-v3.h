@@ -16,8 +16,8 @@ namespace raytracer
             {
             public:
             protected:
-                virtual imaging::Color compute_specular(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightRay light_ray) const;
-                virtual imaging::Color process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightRay light_ray) const override;
+                virtual imaging::Color compute_specular(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay& light_ray) const;
+            	imaging::Color process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay& light_ray) const override;
             };
         }
 

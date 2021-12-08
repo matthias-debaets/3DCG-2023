@@ -111,7 +111,7 @@ int main(int argc, char** argv)
 #else
     // Debug build
     // Make path point to a test script
-    const std::string path = R"(C:\dir\testscript.chai)";
+    const std::string path = R"(C:\Users\Maarten\Documents\school\2021-2022\semester1\3D\v5.chai)";
     render_script(path);
 #endif
 }

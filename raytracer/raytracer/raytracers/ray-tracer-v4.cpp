@@ -5,7 +5,7 @@ using namespace math;
 using namespace raytracer;
 
 
-imaging::Color raytracer::raytracers::_private_::RayTracerV4::process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, LightRay light_ray) const
+imaging::Color raytracer::raytracers::_private_::RayTracerV4::process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay& light_ray) const
 {
     Hit new_hit;
     const auto light_hit = scene.root->find_first_positive_hit(light_ray.ray, &new_hit);

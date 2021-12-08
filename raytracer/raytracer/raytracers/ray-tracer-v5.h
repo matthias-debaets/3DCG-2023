@@ -3,7 +3,7 @@
 #include "raytracers/ray-tracer.h"
 #include <memory>
 
-#include "ray-tracer-v3.h"
+#include "ray-tracer-v4.h"
 
 
 namespace raytracer
@@ -12,17 +12,17 @@ namespace raytracer
     {
         namespace _private_
         {
-            class RayTracerV4 : public RayTracerV3
+            class RayTracerV5 : public RayTracerV4
             {
             public:
             protected:
-                virtual imaging::Color process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay& light_ray) const override;
+                imaging::Color process_light_ray(const Scene& scene, const MaterialProperties& properties, const Hit& hit, const math::Ray& ray, const LightRay& light_ray) const override;
             };
         }
 
         /// <summary>
         /// Creates simplest ray tracer.
         /// </summary>
-        RayTracer v4();
+        RayTracer v5();
     }
 }
