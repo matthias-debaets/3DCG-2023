@@ -1,0 +1,42 @@
+def material(color)
+{
+  Materials.uniform( [ "ambient": color * 0.5,
+                       "diffuse": color * 0.8 ] )
+}
+
+def scene_at(now)
+{
+  var camera = Cameras.perspective( [ "eye": pos(0, 1, 10),
+                                      "look_at": pos(0,0,0) ] )
+
+  var bouncy_sphere_position = Animations.ease( Animations.animate( pos(0,5,0), pos(0,0,0), seconds(3) ), Easing.bounce(5, 5) )[now]
+  var elastic_sphere_position = Animations.ease( Animations.animate( pos(0,5,0), pos(0,0,0), seconds(3) ), Easing.elastic(10, 5) )[now]
+
+  var bouncy_sphere = translate(bouncy_sphere_position - pos(0, 0, 0), decorate(material(Colors.red()), sphere()))
+  var elastic_sphere = translate(elastic_sphere_position - pos(0, 0, 0), decorate(material(Colors.red()), sphere()))
+  var bouncy_platform = translate(vec(0,-1,0), decorate(material(Colors.white()), crop_spherical(xz_plane(), 2)))
+
+
+  var root = union([
+    translate(vec(-2, 0, 0), union([bouncy_sphere, bouncy_platform])),
+    translate(vec(2, 0, 0), elastic_sphere)
+  ])
+
+  var lights = [ Lights.omnidirectional( pos(0,5,5), Colors.white() ) ]
+
+
+  create_scene(camera, root, lights)
+}
+
+var raytracer   = Raytracers.v2()
+var renderer    = Renderers.standard( [ "width": 500,
+                                        "height": 500,
+                                        "sampler": Samplers.single(),
+                                        "ray_tracer": raytracer ] )
+
+pipeline( scene_animation(scene_at, seconds(5)),
+          [ Pipeline.animation(30),
+            Pipeline.renderer(renderer),
+            Pipeline.wif(),
+            Pipeline.base64(),
+            Pipeline.stdout() ] )
