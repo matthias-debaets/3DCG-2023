@@ -923,6 +923,7 @@
     <ClInclude Include="raytracers\ray-tracer-v6.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClCompile Include="primitives\triangle-primitive.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation\animation.h" />
@@ -1112,5 +1113,6 @@
     <ClInclude Include="samplers\stratified-half-jittered-sampler.h" />
     <ClInclude Include="samplers\n-rooks-sampler.h" />
     <ClInclude Include="samplers\multi-jittered-sampler.h" />
+    <ClInclude Include="primitives\triangle-primitive.h" />
   </ItemGroup>
 </Project>
