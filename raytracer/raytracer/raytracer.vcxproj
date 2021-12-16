@@ -327,7 +327,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>Yes</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

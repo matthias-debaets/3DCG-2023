@@ -7,6 +7,6 @@ namespace raytracer
 {
     namespace primitives
     {
-        Primitive triangle();
+        Primitive triangle(const math::Point3D& vertex1, const math::Point3D& vertex2, const math::Point3D& vertex3);
     }
 }
