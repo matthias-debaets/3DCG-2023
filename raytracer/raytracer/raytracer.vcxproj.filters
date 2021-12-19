@@ -112,6 +112,9 @@
     <ClCompile Include="raytracers\ray-tracer-v6.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="primitives\bbacc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imaging\bitmap.cpp">
@@ -924,6 +927,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClCompile Include="primitives\triangle-primitive.cpp" />
+    <ClInclude Include="primitives\bbacc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation\animation.h" />
