@@ -5,6 +5,7 @@
             "id": "r1111111",
             "firstName": "Dominique",
             "lastName": "Peeters",
+            "status": "Defense in January",
             "extensions": [
                 "Scripting",
                 "Triangle",
@@ -15,6 +16,7 @@
             "id": "r2222222",
             "firstName": "Jo",
             "lastName": "Janssens",
+            "status": "Not done yet",
             "extensions": [
                 "Scripting",
                 "Mesh Optimizer"
