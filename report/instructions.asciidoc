@@ -1,0 +1,15 @@
+= Instructions
+
+Fill in `report.json`.
+Check the file using
+
+[source,language='bash']
+----
+$ py check.py
+----
+
+[IMPORTANT]
+====
+This script is merely an aid.
+The http://3dcg.leone.ucll.be/first-steps/rules/explanations.html[official rules] are listed on the course's companion website.
+====
