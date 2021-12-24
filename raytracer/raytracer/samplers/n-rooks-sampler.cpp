@@ -27,7 +27,7 @@ namespace
 
             std::random_device rd;
             std::mt19937 g(rd());
-            for (unsigned i = 0; i < n; ++i) 
+            for (unsigned i = 0; i < n; i++) 
             {
                 row.push_back(i);
                 column.push_back(i);

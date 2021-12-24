@@ -1,7 +1,8 @@
 def scene_at(now)
 {
-  var camera = Cameras.perspective( [ "eye": pos(0,0,3),
-                                      "look_at": pos(0,0,0) ] )
+  var t = Animations.animate(0, 1, seconds(5))[now]
+  var camera = Cameras.perspective( [ "eye": pos(0,0,3-3*t),
+                                      "look_at": pos(-t,0,0) ] )
 
   var red_sphere_material = Materials.uniform( [ "ambient": Colors.red() * 0.1,
                                              "diffuse": Colors.red() * 0.8,

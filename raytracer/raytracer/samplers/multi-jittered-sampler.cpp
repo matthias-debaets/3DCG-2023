@@ -39,9 +39,13 @@ namespace
             for (unsigned i = 0; i < n; i++)
             {
                 auto mini_rectangles = math::Rasterizer(rectangles[Position2D(i, i)], n, n);
-                double x = (double)rand() / (double)RAND_MAX;
-                double y = (double)rand() / (double)RAND_MAX;
-                function(mini_rectangles[Position2D(row[i], column[i])].from_relative(Point2D(x, y)));
+            	for (unsigned j = 0; j < n; j++)
+            	{
+				const double x = (double)rand() / (double)RAND_MAX;
+                const double y = (double)rand() / (double)RAND_MAX;
+                function(mini_rectangles[Position2D(row[j], column[j])].from_relative(Point2D(x, y)));
+            	}
+
             }
         }
     };

@@ -438,6 +438,10 @@
     <ClCompile Include="tasks\lambda-task.cpp" />
     <ClCompile Include="tasks\serial-task-scheduler.cpp" />
     <ClCompile Include="tests\main.cpp" />
+    <ClCompile Include="tests\multi-jittered-sampler-tests.cpp" />
+    <ClCompile Include="tests\n-rooks-sampler-tests.cpp" />
+    <ClCompile Include="tests\stratified-half-jittered-sampler-tests.cpp" />
+    <ClCompile Include="tests\stratified-jittered-sampler-tests.cpp" />
     <ClCompile Include="tests\stratified-sampler-tests.cpp" />
     <ClCompile Include="util\base64.cpp" />
     <ClCompile Include="util\beep.cpp" />

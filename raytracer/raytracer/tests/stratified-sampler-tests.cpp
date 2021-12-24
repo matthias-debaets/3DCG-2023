@@ -2,6 +2,32 @@
 
 #include "samplers/stratified-sampler.h"
 #include "Catch.h"
+#include <map>
+
+
+bool check_stratified(const std::vector<math::Point2D> points, const std::vector<math::Point2D> correct)
+{
+	bool compare = true;
+	std::vector<math::Point2D> check;
+	for (int i = 0; i < points.size() && compare; i++) {
+		for (int j = 0; j < correct.size(); j++) {
+			if (points[i] == correct[j]) {
+				if (std::find(check.begin(), check.end(), correct[j]) != check.end()) {
+					compare = false;
+					break;
+				}
+				else
+				{
+					check.push_back(correct[j]);
+					compare = true;
+					break;
+				}
+			}
+			compare = false;
+		}
+	}
+	return compare;
+}
 
 TEST_CASE("Given a rectangle[0, 1]×[0, 1] and 1×1 samples, the returned sample should be{ (0.5,0.5) }")
 {
@@ -10,16 +36,7 @@ TEST_CASE("Given a rectangle[0, 1]×[0, 1] and 1×1 samples, the returned sample s
 	auto points = sampler->sample(rectangle);
 	std::vector<math::Point2D> correct = { math::Point2D(0.5, 0.5) };
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
 	REQUIRE(compare);
 
 }
@@ -30,16 +47,8 @@ TEST_CASE("Given a rectangle [5,7]×[3,7] and 1×1 samples, the returned sample sh
 	auto points = sampler->sample(rectangle);
 	std::vector<math::Point2D> correct = { math::Point2D(6, 5) };
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
@@ -49,17 +58,8 @@ TEST_CASE("Given a rectangle [0,2]×[0,2] and 1×1 samples, the returned sample sh
 	raytracer::Sampler sampler = raytracer::samplers::stratified_fixed(1, 1);
 	auto points = sampler->sample(rectangle);
 	std::vector<math::Point2D> correct = { math::Point2D(1, 1) };
+	bool compare = check_stratified(points, correct);
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
 	REQUIRE(compare);
 
 }
@@ -70,16 +70,8 @@ TEST_CASE("Given a rectangle [0,4]×[0,2] and 2×1 samples, the returned samples s
 	auto points = sampler->sample(rectangle);
 	std::vector<math::Point2D> correct = { math::Point2D(1, 1), math::Point2D(3,1) };
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
@@ -90,16 +82,8 @@ TEST_CASE("Given a rectangle [0,2]×[0,4] and 1×2 samples, the returned samples s
 	auto points = sampler->sample(rectangle);
 	std::vector<math::Point2D> correct = { math::Point2D(1,1), math::Point2D(1, 3) };
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
@@ -117,16 +101,8 @@ TEST_CASE("Given a rectangle [0,4]×[0,4] and 4×4 samples, the returned samples s
 		}
 	}
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
@@ -143,17 +119,8 @@ TEST_CASE("Given a rectangle [0,2]×[0,2] and 1×4 samples, the returned samples s
 			correct.push_back(math::Point2D(1, 0.25 + j*0.5));
 		}
 	}
+	bool compare = check_stratified(points, correct);
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
 	REQUIRE(compare);
 
 }
@@ -171,16 +138,8 @@ TEST_CASE("Given a rectangle [0,4]×[0,2] and 4×2 samples, the returned samples s
 		}
 	}
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 }
 TEST_CASE("Given a rectangle [1,7]×[0,2] and 3×2 samples, the returned samples should be {(2+2i,j+0.5)|i=0...3 & j=0…2}")
@@ -197,16 +156,8 @@ TEST_CASE("Given a rectangle [1,7]×[0,2] and 3×2 samples, the returned samples s
 		}
 	}
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
@@ -224,16 +175,8 @@ TEST_CASE("Given a rectangle [1,2]×[1,2] and 2×2 samples, the returned samples s
 		}
 	}
 
-	bool compare = true;
-	for (int i = 0; i < points.size(); i++) {
-		for (int j = 0; j < correct.size(); j++) {
-			if (points[i] == correct[j]) {
-				compare = true;
-				break;
-			}
-			compare = false;
-		}
-	}
+	bool compare = check_stratified(points, correct);
+
 	REQUIRE(compare);
 
 }
