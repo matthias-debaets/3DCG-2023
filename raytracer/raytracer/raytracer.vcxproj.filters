@@ -127,6 +127,9 @@
     <ClCompile Include="tests\multi-jittered-sampler-tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="primitives\mesh\mesh-primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imaging\bitmap.cpp">
@@ -940,6 +943,9 @@
     </ClInclude>
     <ClCompile Include="primitives\triangle-primitive.cpp" />
     <ClInclude Include="primitives\bbacc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="primitives\mesh\mesh-primitive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
