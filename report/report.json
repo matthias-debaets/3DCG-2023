@@ -24,7 +24,9 @@
                 "Stratified - Jittered Sampler",
                 "Bounding Box Accelerator",
                 "Bouncy and Elastic Easing Animation",
-                "Easing Library"
+                "Easing Library",
+				"Mesh Primitive",
+				"Directional Light"
             ]
         },
         {
