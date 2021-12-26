@@ -1,15 +1,30 @@
 {
-    "url": "https://github.com/TODO",
+    "url": "https://github.com/ucll-3dcg-2122/raytracer-de_bouletten_en_een_grote_friet",
     "team-members": [
         {
-            "id": "r1111111",
-            "firstName": "Dominique",
-            "lastName": "Peeters",
+            "id": "r0746926",
+            "firstName": "Maarten",
+            "lastName": "Van Briel",
             "status": "Defense in January",
             "extensions": [
                 "Scripting",
                 "Triangle",
-                "Mesh Optimizer"
+                "Mesh Optimizer",
+                "Ray Tracer v1",
+                "Ray Tracer v2",
+                "Ray Tracer v3",
+                "Ray Tracer v4",
+                "Ray Tracer v5",
+                "Ray Tracer v6",
+                "Multijittered Sampler",
+                "N-Rooks Sampler",
+                "Random Sampler",
+                "Stratified Sampler",
+                "Stratified - Half Jittered Sampler",
+                "Stratified - Jittered Sampler",
+                "Bounding Box Accelerator",
+                "Bouncy and Elastic Easing Animation",
+                "Easing Library"
             ]
         },
         {
