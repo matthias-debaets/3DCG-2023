@@ -8,3 +8,4 @@
 #include "primitives/csg-union-primitive.h"
 #include "primitives/triangle-primitive.h"
 #include "primitives/bbacc.h"
+#include "primitives/mesh/mesh-primitive.h"

@@ -26,9 +26,9 @@ namespace
             hit->position = ray.at(hit->t);
             hit->local_position.xyz = hit->position;
             hit->local_position.uv = Point2D(hit->position.x(), hit->position.y());
-            hit->normal = norm;
+            hit->normal = ray.direction.dot(norm) < 0 ? norm : -norm;
         }
-
+    	
     	bool find_first_positive_hit(const math::Ray& ray, Hit* hit) const override
         {
             auto t = (vertex1 - ray.origin).dot(norm) / ray.direction.dot(norm);
