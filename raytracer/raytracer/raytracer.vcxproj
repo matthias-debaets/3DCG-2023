@@ -436,6 +436,7 @@
     <ClCompile Include="scripting\samplers-module.cpp" />
     <ClCompile Include="scripting\scripting.cpp" />
     <ClCompile Include="math\transformation2d.cpp" />
+    <ClCompile Include="tasks\balanced-parallel-task-scheduler.cpp" />
     <ClCompile Include="tasks\lambda-task.cpp" />
     <ClCompile Include="tasks\serial-task-scheduler.cpp" />
     <ClCompile Include="tests\main.cpp" />
@@ -629,6 +630,7 @@
     <ClInclude Include="scripting\scripting-util.h" />
     <ClInclude Include="scripting\scripting.h" />
     <ClInclude Include="math\transformation2d.h" />
+    <ClInclude Include="tasks\balanced-parallel-task-scheduler.h" />
     <ClInclude Include="tasks\lambda-task.h" />
     <ClInclude Include="tasks\serial-task-scheduler.h" />
     <ClInclude Include="tasks\task-helpers.h" />

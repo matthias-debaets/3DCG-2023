@@ -1,6 +1,5 @@
 def scene_at(now)
 {
-
   var camera = Cameras.perspective( [ "eye": pos(0,0,3),
                                       "look_at": pos(0,0,0) ] )
 
@@ -9,7 +8,7 @@ def scene_at(now)
 
   var primitives = []
 
-  for ( var x = -3*10; x <= 3*500; x += 3 )
+  for ( var x = -3*10; x <= 3*30; x += 3 )
   {
     primitives.push_back( decorate(material, translate(vec(x,0,10), sphere() ) ) )
   }

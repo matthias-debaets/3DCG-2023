@@ -7,6 +7,7 @@
 #include "samplers/samplers.h"
 #include "imaging/wif-format.h"
 #include "tasks/task-schedulers.h"
+#include <thread>
 
 using namespace chaiscript;
 using namespace raytracer;
@@ -16,11 +17,18 @@ namespace
 {
     struct RendererLibrary
     {
+#ifdef NDEBUG
+        Renderer standard(unsigned width, unsigned height, Sampler sampler, RayTracer ray_tracer) const
+        {
+            return raytracer::renderers::standard(width, height, sampler, ray_tracer, tasks::schedulers::balanced_parallel(std::thread::hardware_concurrency()));
+        }
+#else
+    	//debug mode
         Renderer standard(unsigned width, unsigned height, Sampler sampler, RayTracer ray_tracer) const
         {
             return raytracer::renderers::standard(width, height, sampler, ray_tracer, tasks::schedulers::serial());
         }
-
+#endif
         Renderer standard_by_map(const std::map<std::string, Boxed_Value>& argument_map) const
         {
             START_ARGUMENTS(argument_map);
