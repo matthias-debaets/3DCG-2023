@@ -26,7 +26,8 @@
                 "Bouncy and Elastic Easing Animation",
                 "Easing Library",
 				"Mesh Primitive",
-				"Directional Light"
+				"Directional Light",
+				"Balanced Parallel Task Scheduler"
             ]
         },
         {
