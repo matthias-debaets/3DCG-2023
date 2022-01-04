@@ -31,13 +31,14 @@
             ]
         },
         {
-            "id": "r2222222",
-            "firstName": "Jo",
-            "lastName": "Janssens",
-            "status": "Not done yet",
+            "id": "r0744161",
+            "firstName": "Matthias",
+            "lastName": "De Baets",
+            "status": "Defense in June/August",
             "extensions": [
                 "Scripting",
-                "Mesh Optimizer"
+                "Planes",
+				"Studio Pipeline Segment"
             ]
         }
     ]
