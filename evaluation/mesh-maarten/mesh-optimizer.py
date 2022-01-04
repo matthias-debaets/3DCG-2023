@@ -2,6 +2,7 @@ import sys
 
 class Vertex:
     def __init__(self, x, y, z):
+        #x, y and z coord of vertex
         self.x = x
         self.y = y
         self.z = z
@@ -23,6 +24,7 @@ class Triangle:
         return Vertex((self.v1.x + self.v2.x + self.v3.x)/3, (self.v1.y + self.v2.y + self.v3.y)/3, (self.v1.z + self.v2.z + self.v3.z)/3)
 
 def longest_axis(list):
+    #take highest and lowest coords of each dimension, returns the longest dimension
     x_min = list[0].c.x
     x_max = list[0].c.x
     y_min = list[0].c.y
@@ -54,7 +56,7 @@ def longest_axis(list):
         return "z"
 
 def write_hierarchy(list):
-    #if size of list > 2: split list in 2 and repeat write_hierarchy
+    #if size of list > 2: split list in 2 based on the longest axis and repeat write_hierarchy
     if len(list) > 2:
         axis = longest_axis(list)
         if axis == "x":
@@ -87,25 +89,26 @@ with open(sys.argv[1], 'r') as mesh:
         vertices = []
         triangles= []
 
-        #writes all vertices and puts them in a list
+        #writes all vertices to output file and puts them in a list
+        print("reading vertices...")
         for x in range(count_vertices):
             line = mesh.readline()
             coords = line.split()
 
             vertices.append(Vertex(float(coords[0]), float(coords[1]), float(coords[2])))
             optimized.write(line)
-
-        print("vertices writen")
+        print("vertices read and writen")
+        
         #puts all triangles in a list
+        print("reading triangles...")
         for line in mesh:
             l = line.split()
             if l[0] == "t":
                 triangles.append(Triangle(vertices[int(l[1])], vertices[int(l[2])], vertices[int(l[3])], int(l[1]), int(l[2]), int(l[3])))
-        
         print("triangles read")
+
+        #writes hierarchy of triangles and bounding boxes
         print("writing hierarchy...")
-        #writes hierarchy of bounding boxes
-        write_hierarchy(triangles)
-        
+        write_hierarchy(triangles)        
         optimized.write("end")
         print("hierarchy writen")
