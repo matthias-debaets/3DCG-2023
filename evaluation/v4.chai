@@ -1,27 +1,33 @@
 def scene_at(now)
 {
-  var camera = Cameras.perspective( [ "eye": pos(0,0,10),
-                                      "look_at": pos(0,0,0) ] )
+  var y = Animations.animate(0, 12, seconds(5))
+  var look_at = Animations.animate(-2, 0, seconds(5))
+  var camera = Cameras.perspective( [ "eye": pos(0,y[now],5),
+                                      "look_at": pos(0,0,look_at[now]) ] )
 
-  var wall_material = Materials.uniform( [ "ambient": Colors.white() * 0.5,
-                                            "diffuse": Colors.white() * 0.8 ] )
+  var wall_material = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                            "diffuse": Colors.white() * 0.8,
+                                            "specular": Colors.white() * 0.5,
+                                            "specular_exponent": 5 ] )
 
 
-  var small_sphere_material = Materials.uniform( [ "ambient": Colors.red() * 0.5,
-                                                   "diffuse": Colors.red() * 0.8 ] )
+  var small_sphere_material = Materials.uniform( [ "ambient": Colors.red() * 0.1,
+                                                   "diffuse": Colors.red() * 0.8,
+                                                   "specular": Colors.red() * 0.5,
+                                                   "specular_exponent": 5] )
 
   var primitives = []
   primitives.push_back( translate(vec(-5,0,0), decorate(wall_material, yz_plane())) )
   primitives.push_back( translate(vec(5,0,0), decorate(wall_material, yz_plane())) )
 
   for_each([-10..10], bind(fun (i, primitives, small_sphere_material) {
-      primitives.push_back(translate(vec(1.5, 2.5*i, 0), decorate( small_sphere_material, sphere())))
-      primitives.push_back(translate(vec(-1.5, 2.5*i, 0), decorate( small_sphere_material, sphere())))
+      primitives.push_back(translate(vec(2, 0, 3*i), decorate( small_sphere_material, sphere())))
+      primitives.push_back(translate(vec(-2, 0, 3*i), decorate( small_sphere_material, sphere())))
   }, _, primitives, small_sphere_material))
 
   var root = union(primitives)
 
-  var lights = [ Lights.omnidirectional( pos(0,0,0), Colors.white() ) ]
+  var lights = [ Lights.omnidirectional( pos(0,5,5), Colors.white() ), Lights.omnidirectional( pos(0,-5,5), Colors.white()) ]
 
   create_scene(camera, root, lights)
 }
