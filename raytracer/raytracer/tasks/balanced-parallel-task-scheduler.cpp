@@ -37,7 +37,7 @@ namespace
             if (!tasks->empty())
             {
                 mutex->lock();
-                auto task = tasks->back();
+                auto &task = tasks->back();
                 tasks->pop_back();
                 mutex->unlock();
                 task->perform();

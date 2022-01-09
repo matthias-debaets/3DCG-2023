@@ -347,6 +347,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cameras\depth-of-field-perspective-camera.cpp" />
     <ClCompile Include="easylogging++.cc" />
     <ClCompile Include="lights\directional-light.cpp" />
     <ClCompile Include="math\angle.cpp" />
@@ -456,6 +457,7 @@
     <ClInclude Include="animation\ease-animation.h" />
     <ClInclude Include="animation\interval-animation.h" />
     <ClInclude Include="animation\time-stamp.h" />
+    <ClInclude Include="cameras\depth-of-field-perspective-camera.h" />
     <ClInclude Include="chaiscript\chaiscript.hpp" />
     <ClInclude Include="chaiscript\chaiscript_basic.hpp" />
     <ClInclude Include="chaiscript\chaiscript_defines.hpp" />
