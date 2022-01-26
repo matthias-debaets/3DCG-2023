@@ -27,7 +27,8 @@
                 "Easing Library",
 				"Mesh Primitive",
 				"Directional Light",
-				"Balanced Parallel Task Scheduler"
+				"Balanced Parallel Task Scheduler",
+				"Depth of Field Camera"
             ]
         },
         {
