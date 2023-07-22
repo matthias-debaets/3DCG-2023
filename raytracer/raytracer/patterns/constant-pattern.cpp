@@ -3,9 +3,9 @@
 using namespace math;
 using namespace raytracer;
 
-namespace patterns
+namespace
 {
-	class ConstantPattern2D : public raytracer::patterns::_private_::Pattern2DImplementation
+	class ConstantPattern2D : public raytracer::patterns::Pattern2DImplementation
 	{
 	private:
 		bool constantValue;
@@ -18,7 +18,7 @@ namespace patterns
 		}
 	};
 
-	class ConstantPattern3D : public raytracer::patterns::_private_::Pattern3DImplementation
+	class ConstantPattern3D : public raytracer::patterns::Pattern3DImplementation
 	{
 	private:
 		bool constantValue;
@@ -31,13 +31,13 @@ namespace patterns
 		}
 	};
 
-	Pattern2D constant2d(bool value)
+	patterns::Pattern2D constant2d(bool value)
 	{
-		return Pattern2D(std::make_shared<ConstantPattern2D>(value));
+		return patterns::Pattern2D(std::make_shared<ConstantPattern2D>(value));
 	}
 
-	Pattern3D constant3d(bool value)
+	patterns::Pattern3D constant3d(bool value)
 	{
-		return Pattern3D(std::make_shared<ConstantPattern3D>(value));
+		return patterns::Pattern3D(std::make_shared<ConstantPattern3D>(value));
 	}
 }
