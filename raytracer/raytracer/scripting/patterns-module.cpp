@@ -2,7 +2,7 @@
 
 #include "scripting/patterns-module.h"
 #include "scripting/scripting-util.h"
-#include "patterns/pattern.h"
+#include "patterns/patterns.h"
 
 using namespace chaiscript;
 using namespace raytracer;
@@ -14,7 +14,15 @@ namespace
 {
     struct PatternLibrary
     {
+        Pattern2D constant2d(bool value) const
+        {
+	        return patterns::constant2d(value);
+		}
 
+        Pattern3D constant3d(bool value) const
+        {
+	        return patterns::constant3d(value);
+        }
     };
 }
 
@@ -30,8 +38,8 @@ ModulePtr raytracer::scripting::_private_::create_patterns_module()
 
 #   define BIND(NAME)                      BIND_AS(NAME, NAME)
 #   define BIND_AS(INTERNAL, EXTERNAL)     module->add(fun(&PatternLibrary::INTERNAL), #EXTERNAL)
-    //BIND(omnidirectional);
-    //BIND(directional);
+    BIND(constant2d);
+    BIND(constant3d);
 #   undef BIND_AS
 #   undef BIND
 

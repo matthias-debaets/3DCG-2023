@@ -1,3 +1,4 @@
+#include "patterns-module.h"
 #ifndef EXCLUDE_SCRIPTING
 
 #include "scripting/scripting.h"
@@ -41,6 +42,7 @@ namespace raytracer
             chai.add(create_samplers_module());
             chai.add(create_pipeline_module());
             chai.add(create_animation_module());
+            chai.add(create_patterns_module());
             chai.add(chaiscript::extras::math::bootstrap());
         }
     }
