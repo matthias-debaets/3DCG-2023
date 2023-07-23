@@ -7,28 +7,28 @@ namespace
 {
 	class ConstantPattern2D : public raytracer::patterns::_private_::Pattern2DImplementation
 	{
-	private:
-		bool constantValue;
-
 	public:
 		ConstantPattern2D(bool value) : constantValue(value) {}
 
 		bool at(const math::Point2D& point) const override {
 			return constantValue;
 		}
+
+	private:
+		bool constantValue;
 	};
 
 	class ConstantPattern3D : public raytracer::patterns::_private_::Pattern3DImplementation
 	{
-	private:
-		bool constantValue;
-
 	public:
 		ConstantPattern3D(bool value) : constantValue(value) {}
 
 		bool at(const math::Point3D& point) const override {
 			return constantValue;
 		}
+
+	private:
+		bool constantValue;
 	};
 }
 

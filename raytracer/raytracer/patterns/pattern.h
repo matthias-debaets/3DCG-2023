@@ -30,21 +30,20 @@ namespace raytracer
 
 	class Pattern2D
 	{
-	private:
-		std::shared_ptr<patterns::_private_::Pattern2DImplementation> implementation;
 	public:
 		explicit Pattern2D(std::shared_ptr<patterns::_private_::Pattern2DImplementation> impl = nullptr) : implementation(std::move(impl)) {}
 
 		bool operator()(const math::Point2D& point) const
 		{
 			return implementation->at(point);
-		} 
+		}
+
+	private:
+		std::shared_ptr<patterns::_private_::Pattern2DImplementation> implementation;
 	};
 
 	class Pattern3D
 	{
-	private:
-		std::shared_ptr<patterns::_private_::Pattern3DImplementation> implementation;
 	public:
 		explicit Pattern3D(std::shared_ptr<patterns::_private_::Pattern3DImplementation> impl = nullptr) : implementation(std::move(impl)) {}
 
@@ -52,5 +51,8 @@ namespace raytracer
 		{
 			return implementation->at(point);
 		}
+
+	private:
+		std::shared_ptr<patterns::_private_::Pattern3DImplementation> implementation;
 	};
 }
