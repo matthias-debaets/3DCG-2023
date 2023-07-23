@@ -56,6 +56,22 @@ namespace
 
             return raytracer::materials::uniform(properties);
         }
+
+        Material pattern2d(
+            const Pattern2D& pattern,
+            const Material& m1,
+            const Material& m2) const
+        {
+            return raytracer::materials::pattern2d(pattern, m1, m2);
+        }
+
+        Material pattern3d(
+			const Pattern3D& pattern,
+			const Material& m1,
+			const Material& m2) const
+        {
+	        return raytracer::materials::pattern3d(pattern, m1, m2);
+		}
     };
 }
 
@@ -80,6 +96,8 @@ ModulePtr raytracer::scripting::_private_::create_materials_module()
 #   define BIND(NAME)                      BIND_AS(NAME, NAME)
     BIND(uniform);
     BIND_AS(uniform_by_map, uniform);
+    BIND_AS(pattern2d, from_pattern);
+    BIND_AS(pattern3d, from_pattern);
 #   undef BIND
 #   undef BIND_AS
 
