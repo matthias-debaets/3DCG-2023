@@ -350,6 +350,7 @@
     <ClCompile Include="cameras\depth-of-field-perspective-camera.cpp" />
     <ClCompile Include="easylogging++.cc" />
     <ClCompile Include="lights\directional-light.cpp" />
+    <ClCompile Include="materials\pattern-material.cpp" />
     <ClCompile Include="math\angle.cpp" />
     <ClCompile Include="animation\animation.cpp" />
     <ClCompile Include="animation\duration.cpp" />
@@ -519,6 +520,7 @@
     <ClInclude Include="cameras\perspective-camera.h" />
     <ClInclude Include="Catch.h" />
     <ClInclude Include="data-structures\grid.h" />
+    <ClInclude Include="materials\pattern-material.h" />
     <ClInclude Include="math\coordinate-systems.h" />
     <ClInclude Include="math\functions\constant.h" />
     <ClInclude Include="math\functions\easing-function.h" />
