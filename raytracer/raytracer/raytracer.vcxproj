@@ -44,52 +44,52 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Testing|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Full Optimization|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Testing|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Full Optimization|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -369,6 +369,7 @@
     <ClCompile Include="math\plane.cpp" />
     <ClCompile Include="math\quantize.cpp" />
     <ClCompile Include="math\transformation-matrices.cpp" />
+    <ClCompile Include="patterns\constant-pattern.cpp" />
     <ClCompile Include="performance\performance.cpp" />
     <ClCompile Include="pipeline\animation-processor.cpp" />
     <ClCompile Include="pipeline\base64-processor.cpp" />
@@ -430,6 +431,7 @@
     <ClCompile Include="scripting\lights-module.cpp" />
     <ClCompile Include="scripting\materials-module.cpp" />
     <ClCompile Include="scripting\math-module.cpp" />
+    <ClCompile Include="scripting\patterns-module.cpp" />
     <ClCompile Include="scripting\pipeline-module.cpp" />
     <ClCompile Include="scripting\primitives-module.cpp" />
     <ClCompile Include="scripting\raytracing-module.cpp" />
@@ -440,6 +442,7 @@
     <ClCompile Include="tasks\balanced-parallel-task-scheduler.cpp" />
     <ClCompile Include="tasks\lambda-task.cpp" />
     <ClCompile Include="tasks\serial-task-scheduler.cpp" />
+    <ClCompile Include="tests\constant-pattern-tests.cpp" />
     <ClCompile Include="tests\main.cpp" />
     <ClCompile Include="tests\multi-jittered-sampler-tests.cpp" />
     <ClCompile Include="tests\n-rooks-sampler-tests.cpp" />
@@ -529,6 +532,9 @@
     <ClInclude Include="math\transformation-matrices.h" />
     <ClInclude Include="math\vector.h" />
     <ClInclude Include="math\point.h" />
+    <ClInclude Include="patterns\constant-pattern.h" />
+    <ClInclude Include="patterns\pattern.h" />
+    <ClInclude Include="patterns\patterns.h" />
     <ClInclude Include="performance\performance.h" />
     <ClInclude Include="pipeline\animation-processor.h" />
     <ClInclude Include="pipeline\base64-processor.h" />
@@ -624,6 +630,7 @@
     <ClInclude Include="scripting\lights-module.h" />
     <ClInclude Include="scripting\materials-module.h" />
     <ClInclude Include="scripting\math-module.h" />
+    <ClInclude Include="scripting\patterns-module.h" />
     <ClInclude Include="scripting\pipeline-module.h" />
     <ClInclude Include="scripting\primitives-module.h" />
     <ClInclude Include="scripting\raytracing-module.h" />
