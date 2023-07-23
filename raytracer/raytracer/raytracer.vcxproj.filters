@@ -136,6 +136,9 @@
     <ClCompile Include="cameras\depth-of-field-perspective-camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scripting\patterns-module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imaging\bitmap.cpp">
@@ -958,6 +961,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cameras\depth-of-field-perspective-camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns\pattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripting\patterns-module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
