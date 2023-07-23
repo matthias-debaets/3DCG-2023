@@ -139,6 +139,18 @@
     <ClCompile Include="scripting\patterns-module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="patterns\constant-pattern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\constant-pattern-tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="patterns\lambda-pattern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="patterns\xsplit-pattern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imaging\bitmap.cpp">
@@ -967,6 +979,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="scripting\patterns-module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns\constant-pattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns\patterns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns\lambda-pattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patterns\xsplit-pattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
