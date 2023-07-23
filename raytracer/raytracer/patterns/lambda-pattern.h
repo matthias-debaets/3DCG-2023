@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 #include "pattern.h"
 
 namespace raytracer
@@ -12,9 +14,9 @@ namespace raytracer
 			{
 
 			public:
-				using PatternFunctionType = bool (*)(const math::Point2D&);
+				using PatternFunctionType = std::function<bool(const math::Point2D&)>;	
 
-				explicit LambdaPattern2DImplementation(PatternFunctionType function) : m_function(function) {}
+				explicit LambdaPattern2DImplementation(PatternFunctionType function) : m_function(std::move(function)) {}
 
 				bool at(const math::Point2D& point) const override
 				{
@@ -25,12 +27,12 @@ namespace raytracer
 				PatternFunctionType m_function;
 			};
 
-			class LambdaPattern3DImplementation : public raytracer::patterns::_private_::Pattern3DImplementation
+			/*class LambdaPattern3DImplementation : public raytracer::patterns::_private_::Pattern3DImplementation
 			{
 			public:
-				using PatternFunctionType = bool (*)(const math::Point3D&);
+				using PatternFunctionType = std::function<bool(const math::Point3D&)>;
 
-				explicit LambdaPattern3DImplementation(PatternFunctionType function) : m_function(function) {}
+				explicit LambdaPattern3DImplementation(PatternFunctionType function) : m_function(std::move(function)) {}
 
 				bool at(const math::Point3D& point) const override
 				{
@@ -38,11 +40,10 @@ namespace raytracer
 				}
 			private:
 				PatternFunctionType m_function;
-			};
+			};*/
 		}
 
-		Pattern2D make_pattern(_private_::LambdaPattern2DImplementation::PatternFunctionType function);
-
-		Pattern3D make_pattern(_private_::LambdaPattern3DImplementation::PatternFunctionType function);
+		Pattern2D make_pattern(_private_::LambdaPattern2DImplementation::PatternFunctionType);
+		//Pattern3D make_pattern<_private_::LambdaPattern3DImplementation::PatternFunctionType>(_private_::LambdaPattern3DImplementation::PatternFunctionType);
 	}
 }
