@@ -13,6 +13,10 @@ namespace raytracer
 		{
 			double x = std::fmod(point.x(), width);
 			double y = std::fmod(point.y(), height);
+
+			x = (x < 0) ? x + width : x;
+			y = (y < 0) ? y + height : y;
+
 			return math::Point2D(x, y);
 		}
 
@@ -21,6 +25,7 @@ namespace raytracer
 			double x = std::fmod(point.x(), x_size);
 			double y = std::fmod(point.y(), y_size);
 			double z = std::fmod(point.z(), z_size);
+
 			return math::Point3D(x, y, z);
 		}
 
