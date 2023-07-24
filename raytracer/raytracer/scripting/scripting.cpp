@@ -13,6 +13,7 @@
 #include "scripting/samplers-module.h"
 #include "scripting/pipeline-module.h"
 #include "scripting/animation-module.h"
+#include "scripting/patterns-module.h"
 #include "easylogging++.h"
 #include "chaiscript/chaiscript.hpp"
 #include "chaiscript/math.hpp"
