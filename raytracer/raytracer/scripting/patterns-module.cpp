@@ -18,6 +18,12 @@ namespace
         {
 			return patterns::xsplit(boundary);
 		}
+
+        Pattern2D ysplit(double boundary) const
+        {
+	        return patterns::ysplit(boundary);
+        }
+
         Pattern2D constant2d(bool value) const
         {
 	        return patterns::constant2d(value);
@@ -43,7 +49,7 @@ ModulePtr raytracer::scripting::_private_::create_patterns_module()
 #   define BIND(NAME)                      BIND_AS(NAME, NAME)
 #   define BIND_AS(INTERNAL, EXTERNAL)     module->add(fun(&PatternLibrary::INTERNAL), #EXTERNAL)
     BIND(xsplit);
-    //BIND(directional);
+    BIND(ysplit);
     BIND(constant2d);
     BIND(constant3d);
 #   undef BIND_AS
