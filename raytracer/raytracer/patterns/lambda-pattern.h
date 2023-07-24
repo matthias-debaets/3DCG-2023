@@ -27,7 +27,7 @@ namespace raytracer
 				PatternFunctionType m_function;
 			};
 
-			/*class LambdaPattern3DImplementation : public raytracer::patterns::_private_::Pattern3DImplementation
+			class LambdaPattern3DImplementation : public raytracer::patterns::_private_::Pattern3DImplementation
 			{
 			public:
 				using PatternFunctionType = std::function<bool(const math::Point3D&)>;
@@ -40,10 +40,10 @@ namespace raytracer
 				}
 			private:
 				PatternFunctionType m_function;
-			};*/
+			};
 		}
 
 		Pattern2D make_pattern(_private_::LambdaPattern2DImplementation::PatternFunctionType);
-		//Pattern3D make_pattern<_private_::LambdaPattern3DImplementation::PatternFunctionType>(_private_::LambdaPattern3DImplementation::PatternFunctionType);
+		Pattern3D make_pattern(_private_::LambdaPattern3DImplementation::PatternFunctionType);
 	}
 }
