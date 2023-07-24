@@ -14,15 +14,25 @@ namespace
 {
     struct PatternLibrary
     {
-        Pattern2D xsplit(double boundary) const
+        Pattern2D xsplit2d(double boundary) const
         {
-			return patterns::xsplit(boundary);
+			return patterns::xsplit2d(boundary);
 		}
 
-        Pattern2D ysplit(double boundary) const
+        Pattern3D xsplit3d(double boundary) const
         {
-	        return patterns::ysplit(boundary);
+	        return patterns::xsplit3d(boundary);
         }
+
+        Pattern2D ysplit2d(double boundary) const
+        {
+	        return patterns::ysplit2d(boundary);
+        }
+
+        Pattern3D ysplit3d(double boundary) const
+        {
+	        return patterns::ysplit3d(boundary);
+		}
 
         Pattern2D constant2d(bool value) const
         {
@@ -48,8 +58,10 @@ ModulePtr raytracer::scripting::_private_::create_patterns_module()
 
 #   define BIND(NAME)                      BIND_AS(NAME, NAME)
 #   define BIND_AS(INTERNAL, EXTERNAL)     module->add(fun(&PatternLibrary::INTERNAL), #EXTERNAL)
-    BIND(xsplit);
-    BIND(ysplit);
+    BIND_AS(xsplit2d, xsplit);
+    BIND_AS(xsplit3d, xsplit);
+    BIND_AS(ysplit2d, ysplit);
+    BIND_AS(ysplit3d, ysplit);
     BIND(constant2d);
     BIND(constant3d);
 #   undef BIND_AS
