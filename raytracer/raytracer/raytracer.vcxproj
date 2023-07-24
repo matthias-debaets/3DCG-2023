@@ -372,6 +372,7 @@
     <ClCompile Include="math\transformation-matrices.cpp" />
     <ClCompile Include="patterns\constant-pattern.cpp" />
     <ClCompile Include="patterns\lambda-pattern.cpp" />
+    <ClCompile Include="patterns\pattern-tiling.cpp" />
     <ClCompile Include="patterns\xsplit-pattern.cpp" />
     <ClCompile Include="patterns\ysplit-pattern.cpp" />
     <ClCompile Include="performance\performance.cpp" />
@@ -539,6 +540,7 @@
     <ClInclude Include="math\point.h" />
     <ClInclude Include="patterns\constant-pattern.h" />
     <ClInclude Include="patterns\lambda-pattern.h" />
+    <ClInclude Include="patterns\pattern-tiling.h" />
     <ClInclude Include="patterns\pattern.h" />
     <ClInclude Include="patterns\patterns.h" />
     <ClInclude Include="patterns\xsplit-pattern.h" />
