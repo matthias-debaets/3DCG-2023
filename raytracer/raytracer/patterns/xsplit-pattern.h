@@ -6,9 +6,9 @@ namespace raytracer
 {
 	namespace patterns
 	{
-		Pattern2D xsplit(double boundary);
+		Pattern2D xsplit2d(double boundary);
 
-		//Pattern3D xsplit(double boundary);
+		Pattern3D xsplit3d(double boundary);
 	}
 }
 
