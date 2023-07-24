@@ -43,6 +43,31 @@ namespace
         {
 	        return patterns::constant3d(value);
         }
+
+        Pattern2D lines2d(double thickness, double spacing) const
+        {
+            return patterns::tiling_y(ysplit2d(thickness), thickness + spacing);
+        }
+
+        Pattern2D tiling2d(Pattern2D pattern, double width, double height) const
+        {
+	        return patterns::tiling(pattern, width, height);
+		}
+
+        Pattern3D tiling3d(Pattern3D pattern, double x_size, double y_size, double z_size) const
+        {
+			return patterns::tiling(pattern, x_size, y_size, z_size);
+        }
+
+        Pattern2D tiling_x(Pattern2D pattern, double width) const
+        {
+	        return patterns::tiling_x(pattern, width);
+		}
+
+        Pattern2D tiling_y(Pattern2D pattern, double height) const
+        {
+	        return patterns::tiling_y(pattern, height);
+        }
     };
 }
 
@@ -64,6 +89,11 @@ ModulePtr raytracer::scripting::_private_::create_patterns_module()
     BIND_AS(ysplit3d, ysplit);
     BIND(constant2d);
     BIND(constant3d);
+    BIND_AS(tiling2d, tiling);
+    BIND_AS(tiling3d, tiling);
+    BIND(tiling_x);
+    BIND(tiling_y);
+    BIND_AS(lines2d, lines);
 #   undef BIND_AS
 #   undef BIND
 
