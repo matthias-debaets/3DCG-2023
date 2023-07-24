@@ -97,7 +97,7 @@ namespace
 
         math::Box bounding_box() const override
         {
-            return Box(Interval<double>::infinite(), Interval<double>::infinite(), interval(-0.01, 0.01));
+            return Box(Interval<double>::infinite(), interval(-0.01, 0.01), Interval<double>::infinite());
         }
 
     protected:
@@ -122,7 +122,7 @@ namespace
 
         math::Box bounding_box() const override
         {
-            return Box(Interval<double>::infinite(), Interval<double>::infinite(), interval(-0.01, 0.01));
+            return Box(interval(-0.01, 0.01), Interval<double>::infinite(), Interval<double>::infinite());
         }
 
     protected:
