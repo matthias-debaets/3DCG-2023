@@ -18,3 +18,35 @@ Transformation3D math::transformations::translation(const Vector3D& v)
 
     return Transformation3D(tm, itm);
 }
+
+Transformation3D math::transformations::rotate_x(Angle angle)
+{
+	Matrix4x4 tm = transformation_matrices::rotation_around_x(angle);
+	Matrix4x4 itm = transformation_matrices::rotation_around_x(-angle);
+
+	return Transformation3D(tm, itm);
+}
+
+Transformation3D math::transformations::rotate_y(Angle angle)
+{
+	Matrix4x4 tm = transformation_matrices::rotation_around_y(angle);
+	Matrix4x4 itm = transformation_matrices::rotation_around_y(-angle);
+
+	return Transformation3D(tm, itm);
+}
+
+Transformation3D math::transformations::rotate_z(Angle angle)
+{
+	Matrix4x4 tm = transformation_matrices::rotation_around_z(angle);
+	Matrix4x4 itm = transformation_matrices::rotation_around_z(-angle);
+
+	return Transformation3D(tm, itm);
+}
+
+Transformation3D math::transformations::scale(double sx, double sy, double sz)
+{
+	Matrix4x4 tm = transformation_matrices::scaling(sx, sy, sz);
+	Matrix4x4 itm = transformation_matrices::scaling(1.0 / sx, 1.0 / sy, 1.0 / sz);
+
+	return Transformation3D(tm, itm);
+}
