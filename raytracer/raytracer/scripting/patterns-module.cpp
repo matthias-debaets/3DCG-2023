@@ -68,6 +68,46 @@ namespace
         {
 	        return patterns::tiling_y(pattern, height);
         }
+
+        Pattern2D translate2d(math::Vector2D translation, Pattern2D pattern) const
+		{
+			return patterns::translate(translation, pattern);
+		}
+
+        Pattern2D rotate2d(math::Angle angle, Pattern2D pattern) const
+        {
+	        return patterns::rotate(angle, pattern);
+        }
+
+        Pattern2D scale2d(double sx, double sy, Pattern2D pattern) const
+		{
+	        return patterns::scale(sx, sy, pattern);
+		}
+
+        Pattern3D translate3d(math::Vector3D translation, Pattern3D pattern) const
+        {
+	        return patterns::translate(translation, pattern);
+        }
+
+        Pattern3D rotate_x(math::Angle angle, Pattern3D pattern) const
+		{
+	        return patterns::rotate_x(angle, pattern);
+		}
+
+        Pattern3D rotate_y(math::Angle angle, Pattern3D pattern) const
+        {
+	        return patterns::rotate_y(angle, pattern);
+        }
+
+        Pattern3D rotate_z(math::Angle angle, Pattern3D pattern) const
+		{
+	        return patterns::rotate_z(angle, pattern);
+		}
+
+        Pattern3D scale3d(double sx, double sy, double sz, Pattern3D pattern) const
+		{
+	        return patterns::scale(sx, sy, sz, pattern);
+		}
     };
 }
 
@@ -94,6 +134,14 @@ ModulePtr raytracer::scripting::_private_::create_patterns_module()
     BIND(tiling_x);
     BIND(tiling_y);
     BIND_AS(lines2d, lines);
+    BIND_AS(translate2d, translate);
+    BIND_AS(translate3d, translate);
+    BIND_AS(rotate2d, rotate);
+    BIND_AS(rotate_x, rotate_x);
+    BIND_AS(rotate_y, rotate_y);
+    BIND_AS(rotate_z, rotate_z);
+    BIND_AS(scale2d, scale);
+    BIND_AS(scale3d, scale);
 #   undef BIND_AS
 #   undef BIND
 
