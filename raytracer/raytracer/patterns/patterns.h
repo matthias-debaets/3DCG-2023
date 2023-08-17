@@ -5,3 +5,4 @@
 #include "xsplit-pattern.h"
 #include "ysplit-pattern.h"
 #include "pattern-tiling.h"
+#include "pattern-transformations.h"
