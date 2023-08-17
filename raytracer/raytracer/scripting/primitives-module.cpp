@@ -50,6 +50,10 @@ ModulePtr raytracer::scripting::_private_::create_primitives_module()
     BIND_HELPER_FUNCTION_AS(make_union, union);
     BIND_DIRECTLY(decorate);
     BIND_DIRECTLY(translate);
+    BIND_DIRECTLY(rotate_around_x);
+    BIND_DIRECTLY(rotate_around_y);
+    BIND_DIRECTLY(rotate_around_z);
+    BIND_DIRECTLY(scale);
     BIND_DIRECTLY(mesh);
 #   undef BIND_HELPER_FUNCTION_AS
 #   undef BIND_DIRECTLY
