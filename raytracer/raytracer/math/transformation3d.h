@@ -20,5 +20,10 @@ namespace math
     namespace transformations
     {
         Transformation3D translation(const Vector3D&);
+        Transformation3D rotate_x(const Angle angle);
+        Transformation3D rotate_y(const Angle angle);
+        Transformation3D rotate_z(const Angle angle);
+        Transformation3D scale(double sx, double sy, double sz);
+
     }
 }

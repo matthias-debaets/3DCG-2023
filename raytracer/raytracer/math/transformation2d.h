@@ -17,5 +17,7 @@ namespace math
     namespace transformations
     {
         Transformation2D translation(const Vector2D&);
+        Transformation2D rotate(const Angle angle);
+        Transformation2D scale(double sx, double sy);
     }
 }
