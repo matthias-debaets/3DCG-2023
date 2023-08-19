@@ -34,7 +34,7 @@ namespace
         }
         static void* function(std::vector<std::shared_ptr<Task>>* tasks, std::mutex* mutex)
         {
-            if (!tasks->empty())
+            /*if (!tasks->empty())
             {
                 mutex->lock();
                 auto &task = tasks->back();
@@ -43,6 +43,27 @@ namespace
                 task->perform();
             	
                 function(tasks, mutex);
+            }
+            return 0;*/
+            while (true)
+            {
+	            std::shared_ptr<Task> task;
+	            {
+		            std::lock_guard<std::mutex> lock(*mutex);
+                    if (!tasks->empty())
+                    {
+                        task = tasks->back();
+                        tasks->pop_back();
+                    }
+                    else
+                    {
+                        break;
+                    }
+	            }
+	            if (task)
+	            {
+		            task->perform();
+	            }
             }
             return 0;
         }
