@@ -2,36 +2,6 @@
     "url": "https://github.com/ucll-3dcg-2122/raytracer-de_bouletten_en_een_grote_friet",
     "team-members": [
         {
-            "id": "r0746926",
-            "firstName": "Maarten",
-            "lastName": "Van Briel",
-            "status": "Defense in January",
-            "extensions": [
-                "Scripting",
-                "Triangle",
-                "Mesh Optimizer",
-                "Ray Tracer v1",
-                "Ray Tracer v2",
-                "Ray Tracer v3",
-                "Ray Tracer v4",
-                "Ray Tracer v5",
-                "Ray Tracer v6",
-                "Multijittered Sampler",
-                "N-Rooks Sampler",
-                "Random Sampler",
-                "Stratified Sampler",
-                "Stratified - Half Jittered Sampler",
-                "Stratified - Jittered Sampler",
-                "Bounding Box Accelerator",
-                "Bouncy and Elastic Easing Animation",
-                "Easing Library",
-				"Mesh Primitive",
-				"Directional Light",
-				"Balanced Parallel Task Scheduler",
-				"Depth of Field Camera"
-            ]
-        },
-        {
             "id": "r0744161",
             "firstName": "Matthias",
             "lastName": "De Baets",
@@ -39,7 +9,16 @@
             "extensions": [
                 "Scripting",
                 "Planes",
-				"Studio Pipeline Segment"
+			"Studio Pipeline Segment",
+			"Basics",
+			"Pattern Materials",
+			"Lambda Pattern",
+			"Tiling",
+			"Matrix Transformations",
+			"Pattern Transformations",
+			"Primitive Transformations",
+			"Mesh Optimizer",
+			"Motion Blur"
             ]
         }
     ]
