@@ -164,6 +164,11 @@ namespace
             return wrap(pipeline::animation(fps));
         }
 
+        std::shared_ptr<Wrapper> motion_blur(unsigned frame_count, unsigned frame_offset) const
+        {
+	        return wrap(pipeline::motion_blur(frame_count, frame_offset));
+		}
+
         std::shared_ptr<Wrapper> null_bitmap_consumer() const
         {
             return wrap(pipeline::null<std::shared_ptr<Bitmap>>());
@@ -236,6 +241,7 @@ ModulePtr raytracer::scripting::_private_::create_pipeline_module()
     BIND(base64);
     BIND(studio);
     BIND(stdout);
+    BIND(motion_blur);
 #   undef BIND_AS
 #   undef BIND
 

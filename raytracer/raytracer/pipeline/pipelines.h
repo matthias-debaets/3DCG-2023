@@ -8,4 +8,4 @@
 #include "pipeline/base64-processor.h"
 #include "pipeline/text-writer-consumer.h"
 #include "pipeline/studio.h"
-
+#include "pipeline/motion-blur.h"
