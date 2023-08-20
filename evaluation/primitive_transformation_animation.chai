@@ -1,0 +1,44 @@
+def colored_material(color) {
+  Materials.uniform( [ "ambient": color * 0.1,
+                       "diffuse": color * 0.8,
+                       "specular": Colors.white(),
+                       "specular_exponent": 10,
+                       "reflectivity": 0.2 ] )
+}
+
+def scene_at(now)
+{
+  var camera = Cameras.perspective( [ "eye": pos(0,0,10),
+                                      "look_at": pos(0,0,0) ] )
+  var cylinder = sphere()
+
+  var red_cylinder = decorate(colored_material(Colors.red()), cylinder)
+  var green_cylinder = decorate(Materials.from_pattern(Patterns.lines(0.2, 0.1), colored_material(Colors.magenta()), colored_material(Colors.green())), cylinder)
+  var blue_cylinder = decorate(colored_material(Colors.blue()), cylinder)
+
+  var angle = Animations.animate(degrees(0), degrees(360), seconds(5))[now]
+  var factor = Animations.animate(1, 2, seconds(5))[now]
+  var x = Animations.animate(-10, 10, seconds(5))[now]
+
+  var root = union([
+    translate(vec(x, 0, -5), red_cylinder),
+    translate(vec(-2, 0, 0), rotate_around_x(angle, green_cylinder)),
+    translate(vec(2, 0, 0), scale(factor, factor, factor, blue_cylinder))
+  ])
+
+  var lights = [ Lights.omnidirectional( pos(0,5,5), Colors.white() ) ]
+
+  create_scene(camera, root, lights)
+}
+
+var raytracer   = Raytracers.v6()
+
+var renderer    = Renderers.standard( [ "width": 400,
+                                       "height": 400,
+                                       "sampler": Samplers.multijittered(2),
+                                       "ray_tracer": raytracer ] )
+
+pipeline( scene_animation(scene_at, seconds(5)),
+          [ Pipeline.animation(30),
+            Pipeline.renderer(renderer),
+            Pipeline.studio() ] )
