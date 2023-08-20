@@ -1,7 +1,8 @@
 public class Triangle {
     private Vertex v1, v2, v3, center;
     int iv1, iv2, iv3;
-
+    // Triangle class is used to store the vertices of a triangle
+    // as well as the index of the vertices in the vertices list
     Triangle(Vertex v1, Vertex v2, Vertex v3) {
         this.v1 = v1;
         this.v2 = v2;
@@ -10,6 +11,7 @@ public class Triangle {
         this.center = this.calculateCenter();
     }
 
+    // calculateCenter() calculates the center of the triangle
     public Vertex calculateCenter(){
         double xCenter = (this.v1.getX() + this.v2.getX() + this.v3.getX()) / 3;
         double yCenter = (this.v1.getY() + this.v2.getY() + this.v3.getY()) / 3;
